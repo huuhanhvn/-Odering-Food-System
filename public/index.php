@@ -88,7 +88,8 @@ if ($search) {
 <body>
     <div class="header">
         <div class="logo">
-            <div class="logo-img">🍜</div>
+           <img src="/public/img/iconfood.png" alt="Ảnh bị lỗi" width="50px" height="50px"   >
+            <span class="logo-text">Đặt Món Ăn Online</span>
         </div>
 
         <div class="search-container">
