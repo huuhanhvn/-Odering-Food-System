@@ -104,7 +104,7 @@ if ($search) {
 
         <div class="header-actions">
             <a href="#" class="btn btn-cart">🛒 Giỏ hàng</a>
-            <a href="#" class="btn btn-login">Đăng nhập</a>
+            <a href="login.php" class="btn btn-login">Đăng nhập</a>
             <a href="#" class="btn btn-admin">Đăng kí</a>
         </div>
     </div>
