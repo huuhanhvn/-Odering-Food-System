@@ -92,31 +92,30 @@
 
         .btn {
             padding: 12px 28px;
-            border: none;
+            border: none;       
             border-radius: 28px;
             cursor: pointer;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 90;
             transition: all 0.3s ease;
             text-decoration: none;
-            display: inline-flex;
+            display:inline-block;
             align-items: center;
-            gap: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         .btn-cart {
-            background: linear-gradient(135deg, #6e5659 0%, #231819 100%);
+            background: linear-gradient(135deg, #b13947 0%, #c03843 100%);
             color: white;
         }
 
         .btn-login {
-            background: linear-gradient(135deg, #312c2c 0%, #695154 100%);
+            background: linear-gradient(135deg, #cb4040 0%, #e73f53 100%);
             color: white;
         }
 
         .btn-admin {
-            background: linear-gradient(135deg, #644044 0%, #211415 100%);
+ background: linear-gradient(135deg, #cb4040 0%, #e73f53 100%); 
             color: white;
         }
 
