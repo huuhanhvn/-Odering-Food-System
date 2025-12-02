@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 // Dữ liệu sản phẩm mẫu
 $products = [
     [
@@ -76,4 +76,4 @@ if ($search) {
         return stripos($product['name'], $search) !== false;
     });
 }
-?>
+?> -->

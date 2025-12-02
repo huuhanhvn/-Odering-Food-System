@@ -14,15 +14,15 @@
             <span class="logo-text">Đặt Món Ăn Online</span>
         </div>
 
-        <div class="search-container">
+         <div class="search-container">
             <form action="" method="GET">
-                <?php if ($category): ?>
-                    <input type="hidden" name="category" value="<?= htmlspecialchars($category) ?>">
-                <?php endif; ?>
-                <input type="text" name="search" class="search-input" placeholder="Tìm kiếm sản phẩm" value="<?= htmlspecialchars($search) ?>">
+               
+                    <input type="hidden" name="category" value="">
+            
+                <input type="text" name="search" class="search-input" placeholder="Tìm kiếm sản phẩm" value="">
                 <button type="submit" class="search-btn">🔍</button>
             </form>
-        </div>
+        </div> 
 
         <div class="header-actions">
             <a href="#" class="btn btn-cart">🛒 Giỏ hàng</a>
