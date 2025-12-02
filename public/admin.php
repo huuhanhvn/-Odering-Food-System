@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trang Admin</title> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" >
-    </head>
+</head>
 <body>
     <div class="navbar bg-opacity-50 justify-content-start shadow-lg">
         <div class="nav-link"><button class="btn btn-light text-primary">Trang Admin</button></div>

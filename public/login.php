@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="row justify-content-center align-items-center" style="min-height: 100vh">
+        <div class="row justify-content-center align-items-center " style="min-height: 100vh">
             <div class="col-6">
                 <div class="card shadow border-0" >
                     <div class="card-body">
@@ -20,12 +20,12 @@
                             <input name="password" type="password" class="form-control" placeholder="Mật khẩu" />
                             <br />
                             <div class="text-center">
-                               <input name="dangnhap" type="submit" value="Đăng nhập" class="btn btn-primary " />
+                               <input name="login" type="submit" value="Đăng nhập" class="btn btn-primary " />
                                <br><br>
-                               <div class="d-flex justify-content-center align-items-center border rounded p-2">
-                                   <img src="/public/img/google.png" alt="icon google" width="20px" height="20px"   >
-                                   Sign in with Google
-                               </div>
+                               <a href="" class="btn d-flex justify-content-center align-items-center border rounded p-2">
+                                   <img name="loginGoogle" src="/public/img/google.png" alt="icon google" width="20px" height="20px"   >
+                                    Sign up with Google 
+                                </a>
                             </div>
                             <hr />
                             <div class="text-center">
