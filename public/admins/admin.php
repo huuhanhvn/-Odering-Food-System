@@ -20,8 +20,10 @@
                     Sản phẩm
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="them_sanpham.php">Thêm sản phẩm</a></li>
-                    <li><a class="dropdown-item" href="ds_sanpham.php">Danh sách sản phẩm</a></li>
+                    <li><a class="dropdown-item" href="add_product.php">Thêm sản phẩm</a></li>
+                    <li><a class="dropdown-item" href="delete_product.php">Xóa sản phẩm</a></li>
+                   <li><a class="dropdown-item" href="edit_product.php">Chỉnh sửa thông tin sản phẩm</a></li>
+                    <li><a class="dropdown-item" href="list_product.php">Danh sách sản phẩm</a></li>
                 </ul>
             </div>
             <div class="dropdown">
