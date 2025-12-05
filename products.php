@@ -64,7 +64,10 @@ $category = isset($_GET['category']) ? $_GET['category'] : '';
 $search = isset($_GET['search']) ? $_GET['search'] : '';
 
 $filtered_products = $products;
-
+$categories = [];
+foreach ($products as $pr) {
+    $categories[] = $pr['category'];
+};
 if ($category) {
     $filtered_products = array_filter($products, function($product) use ($category) {
         return $product['category'] == $category;
@@ -76,4 +79,4 @@ if ($search) {
         return stripos($product['name'], $search) !== false;
     });
 }
-?>
+?> 
