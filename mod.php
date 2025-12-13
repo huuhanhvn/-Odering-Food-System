@@ -1,17 +1,14 @@
 <?php
-// Lấy tham số module và action
-$mod = isset($_GET['mod']) ? $_GET['mod'] : 'home';
-$act = isset($_GET['act']) ? $_GET['act'] : 'index';
+session_start();
+require_once __DIR__ . '/config/config.php';
 
-// Định nghĩa đường dẫn module
+$mod = $_GET['mod'] ?? 'home';
+$act = $_GET['act'] ?? 'index';
+
 $module_path = __DIR__ . "/module/{$mod}/{$act}.php";
 
-// Kiểm tra file module có tồn tại không
 if (file_exists($module_path)) {
     include $module_path;
 } else {
-    // Nếu không tìm thấy, chuyển về trang chủ
-    header("Location: mod.php?mod=home&act=index");
-    exit;
+    echo "Không tìm thấy module";
 }
-?>
