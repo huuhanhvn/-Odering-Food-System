@@ -1,13 +1,24 @@
 <?php
-$products_path = dirname(__DIR__) . '/products.php';
+// $products_path = dirname(__DIR__) . '/products.php';
 
-if (file_exists($products_path)) {
-    include $products_path;
-} else {
-    error_log("Không tìm thấy file products.php: " . $products_path);
-    $filtered_products = [];
-    $categories = [];
-}
+// if (file_exists($products_path)) {
+//     include $products_path;
+// } else {
+//     error_log("Không tìm thấy file products.php: " . $products_path);
+//     $filtered_products = [];
+//     $categories = [];
+// }
+
+require_once 'config/config.php';
+
+// Khởi tạo
+$dishModel = new dish();
+$categoryModel = new category();
+
+// Lấy dữ liệu
+$dishs= $dishModel->getAll();
+$categories = $categoryModel->getAll();
+
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -21,7 +32,7 @@ if (file_exists($products_path)) {
 <body>
     <div class="header">
         <div class="logo">
-           <img src="/public/img/iconfood.png" alt="Ảnh bị lỗi" width="50px" height="50px"   >
+           <img src="/img/iconfood.png" alt="Ảnh bị lỗi" width="50px" height="50px"   >
             <span class="logo-text">Đặt Món Ăn Online</span>
         </div>
 
@@ -45,25 +56,24 @@ if (file_exists($products_path)) {
 <div class="body">
     <div class="view-products bg-white w-100">
             <!-- Danh sách danh mục -->
-
         <div class="container d-flex justify-content-between my-3 gap-3">
            <?php foreach ($categories as $ct): ?>
-               <a href="?category=<?= urlencode($ct) ?>" class="btn rounded-pill flex-fill text-white" 
+              <a href="?category=<?= urlencode($ct['category_name']) ?>" class="btn rounded-pill flex-fill text-white" 
                  style="background-color:#b71c1c">
-                 <?= htmlspecialchars($ct) ?>
-                </a>
+                 <?= htmlspecialchars($ct['category_name']) ?>
+             </a>
            <?php endforeach; ?>
-</div>
+        </div>
             <!-- Danh sách sản phẩm -->
          <div class="row">
-        <?php foreach ($filtered_products as $p): ?>
+        <?php foreach ($dishs as $d): ?>
         <div class="col-3 mb-4">
             <div class="card shadow-lg text-center">
-                <img src="<?= $p['image'] ?>" class="card-img-top" style="height:180px; object-fit:cover;">
+                <img src="<?= '/img/'.$d['image'] ?>" class="card-img-top" style="height:180px; object-fit:cover;">
                 <div class="card-body">
-                    <h5><?= $p['name'] ?></h5>
-                    <p class="text-danger fw-bold"><?= number_format($p['price'], 0) ?> đ</p>
-                    <a href="detail.php?id=<?= $p['id'] ?>" class="btn btn-danger rounded-pill px-4">
+                    <h5><?= $d['dish_name'] ?></h5>
+                    <p class="text-danger fw-bold"><?= number_format($d['price'], 0) ?> đ</p>
+                    <a href="detail.php?id=<?= $d['id'] ?>" class="btn btn-danger rounded-pill px-4">
                         Chọn
                     </a>
                 </div>
