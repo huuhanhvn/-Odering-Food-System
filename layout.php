@@ -30,7 +30,12 @@ require_once __DIR__ . '/config/config.php';
         </div> 
 
         <div class="header-actions">
-            <a href="#" class="btn btn-cart">🛒 Giỏ hàng</a>
+          <a href="<?= BASE_URL ?>layout.php?mod=cart&act=index" class="btn btn-cart">
+    🛒 Giỏ hàng
+    <?php if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0): ?>
+        <span class="badge bg-danger"><?= count($_SESSION['cart']) ?></span>
+    <?php endif; ?>
+</a>
             <a href="login.php" class="btn btn-login">Đăng nhập</a>
             <a href="signup.php" class="btn btn-admin">Đăng kí</a>
         </div>

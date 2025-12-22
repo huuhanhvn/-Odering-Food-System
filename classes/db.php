@@ -10,7 +10,6 @@ class Db{
 			{
 				$this->dbh = new PDO($driver, DB_USER, DB_PASS);
 				$this->dbh->query("set names 'utf8' ");
-				
 			}	
 			catch(PDOException $e)
 			{

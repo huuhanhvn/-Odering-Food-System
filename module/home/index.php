@@ -44,9 +44,14 @@ if ($search_keyword) {
                 <div class="card-body">
                     <h5><?= $d['dish_name'] ?></h5>
                     <p class="text-danger fw-bold"><?= number_format($d['price'], 0) ?> đ</p>
-                    <a href="detail.php?id=<?= $d['id'] ?>" class="btn btn-danger rounded-pill px-4">
-                        Chọn
-                    </a>
+        <form method="POST" action="<?= BASE_URL ?>layout.php?mod=cart&act=index">
+            <input type="hidden" name="product_id" value="<?= $d['id'] ?>">
+            <input type="number" name="quantity" value="1" min="1" class="form-control" style="width: 80px; display: inline-block;">
+            <button type="submit" name="add_to_cart" class="btn btn-danger">
+                Thêm vào giỏ
+            </button>
+        </form>
+
                 </div>
             </div>
         </div>
