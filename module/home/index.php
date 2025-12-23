@@ -28,7 +28,7 @@ if ($search_keyword) {
                 
                 <!-- Các danh mục -->
                 <?php foreach ($categories as $ct): ?>
-                    <a href="<?= BASE_URL ?>layout.php?mod=home&act=index&category=<?= urlencode($ct['category_name']) ?>" 
+                    <a href="<?= BASE_URL ?>/layout.php?mod=home&act=index&category=<?= urlencode($ct['category_name']) ?>" 
                        class="btn rounded-pill flex-fill text-white <?= $current_category == $ct['category_name'] ? 'active' : '' ?>" 
                        style="background-color:#b71c1c">
                         <?= htmlspecialchars($ct['category_name']) ?>
@@ -44,7 +44,7 @@ if ($search_keyword) {
                 <div class="card-body">
                     <h5><?= $d['dish_name'] ?></h5>
                     <p class="text-danger fw-bold"><?= number_format($d['price'], 0) ?> đ</p>
-        <form method="POST" action="<?= BASE_URL ?>layout.php?mod=cart&act=index">
+        <form method="POST" action="<?= BASE_URL ?>/layout.php?mod=cart&act=index">
             <input type="hidden" name="product_id" value="<?= $d['id'] ?>">
             <input type="number" name="quantity" value="1" min="1" class="form-control" style="width: 80px; display: inline-block;">
             <button type="submit" name="add_to_cart" class="btn btn-danger">

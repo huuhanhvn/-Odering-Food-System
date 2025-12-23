@@ -45,13 +45,13 @@ if (isset($_POST['update_cart'])) {
 if (isset($_GET['remove'])) {
     $product_id = $_GET['remove'];
     unset($_SESSION['cart'][$product_id]);
-    header("Location: " . BASE_URL . "layout.php?mod=cart&act=index");
+    header("Location: " . BASE_URL . "/layout.php?mod=cart&act=index");
     exit();
 }
 
 if (isset($_GET['clear'])) {
     $_SESSION['cart'] = [];
-    header("Location: " . BASE_URL . "layout.php?mod=cart&act=index");
+    header("Location: " . BASE_URL . "/layout.php?mod=cart&act=index");
     exit();
 }
 
@@ -70,7 +70,7 @@ $cart_count = array_sum(array_column($_SESSION['cart'], 'quantity'));
         <div class="alert alert-info">
             <h4>Giỏ hàng của bạn đang trống</h4>
             <p>Hãy thêm sản phẩm vào giỏ hàng để tiếp tục mua sắm</p>
-            <a href="<?= BASE_URL ?>layout.php?mod=home&act=index" class="btn btn-primary">
+            <a href="<?= BASE_URL ?>/layout.php?mod=home&act=index" class="btn btn-primary">
                 ← Tiếp tục mua sắm
             </a>
         </div>
@@ -109,7 +109,7 @@ $cart_count = array_sum(array_column($_SESSION['cart'], 'quantity'));
                                 </strong>
                             </td>
                             <td>
-                                <a href="<?= BASE_URL ?>layout.php?mod=cart&act=index&remove=<?= $item['id'] ?>" 
+                                <a href="<?= BASE_URL ?>/layout.php?mod=cart&act=index&remove=<?= $item['id'] ?>" 
                                    class="btn btn-danger btn-sm"
                                    onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này?')">
                                     Xóa
@@ -125,12 +125,12 @@ $cart_count = array_sum(array_column($_SESSION['cart'], 'quantity'));
                     <button type="submit" name="update_cart" class="btn btn-success me-2">
                         Cập nhật giỏ hàng
                     </button>
-                    <a href="<?= BASE_URL ?>layout.php?mod=cart&act=index&clear=1" 
+                    <a href="<?= BASE_URL ?>/layout.php?mod=cart&act=index&clear=1" 
                        class="btn btn-secondary me-2"
                        onclick="return confirm('Bạn có chắc muốn xóa toàn bộ giỏ hàng?')">
                         Xóa toàn bộ
                     </a>
-                    <a href="<?= BASE_URL ?>layout.php?mod=home&act=index" class="btn btn-primary">
+                    <a href="<?= BASE_URL ?>/layout.php?mod=home&act=index" class="btn btn-primary">
                         ← Tiếp tục mua sắm
                     </a>
                 </div>
