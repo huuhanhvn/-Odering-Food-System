@@ -1,6 +1,5 @@
 <?php
 require_once __DIR__ . '/config/config.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -15,7 +14,7 @@ require_once __DIR__ . '/config/config.php';
     <div class="header">
         <div class="logo">
            <img src="<?= BASE_URL ?>/img/iconfood.png" alt="Ảnh bị lỗi" width="50px" height="50px"   >
-            <span class="logo-text">Đặt Món Ăn Online</span>
+            <span class="text-white">Đặt Món Ăn Online</span>
         </div>
 
         <div class="search-container">
@@ -30,14 +29,14 @@ require_once __DIR__ . '/config/config.php';
         </div> 
 
         <div class="header-actions">
-          <a href="<?= BASE_URL ?>layout.php?mod=cart&act=index" class="btn btn-cart">
+          <a href="<?= BASE_URL ?>layout.php?mod=cart&act=index" class="btn btn-cart text-white">
     🛒 Giỏ hàng
     <?php if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0): ?>
         <span class="badge bg-danger"><?= count($_SESSION['cart']) ?></span>
     <?php endif; ?>
-</a>
-            <a href="login.php" class="btn btn-login">Đăng nhập</a>
-            <a href="signup.php" class="btn btn-admin">Đăng kí</a>
+           </a>
+            <a href="<?= BASE_URL ?>/include/login.php" class="btn btn-login text-white">Đăng nhập</a>
+            <a href="<?= BASE_URL ?>/include/signup.php" class="btn btn-admin text-white">Đăng kí</a>
         </div>
     </div>
     <div class="body">

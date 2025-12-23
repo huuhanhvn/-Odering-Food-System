@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <link rel="stylesheet" href="../css/auth.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-light">
     <div class="container" style="max-width: 520px;">
         <div class="m-2">
             <h1>Đăng ký</h1>
@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <?php if (!empty($success)): ?>
                 <div class="alert alert-success"><?= htmlspecialchars($success) ?></div>
             <?php endif; ?>
-<div class="register-box">
+           <div class="register-box">
             <form method="POST" action="">
                 <label class="form-label">Tên đầy đủ</label>
                 <input name="full_name" type="text" placeholder="Nhập tên"

@@ -1,3 +1,6 @@
+<?php
+require_once __DIR__ . '/../config/config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +11,7 @@
 </head>
 <body>
     <div class="navbar bg-opacity-50 justify-content-start shadow-lg">
-        <div class="nav-link"><button class="btn btn-light text-primary">Trang Admin</button></div>
-        <div class="nav-link"><a class="btn btn-light text-primary" href="trangchu.php">Trang chủ</a></div> 
+        <div class="nav-link"><a class="btn btn-light text-primary" href="<?= BASE_URL ?>/layout.php">Trang chủ</a></div> 
     </div>
     
     <div class="d-flex vh-100 ">

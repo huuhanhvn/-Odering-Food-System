@@ -62,7 +62,7 @@ if (empty($account) || empty($password)) {
                                <input name="login" type="submit" value="Đăng nhập" class="btn btn-primary " />
                                <br><br>
                                <a href="" class="btn d-flex justify-content-center align-items-center border rounded p-2">
-                                   <img name="loginGoogle" src="/public/img/google.png" alt="icon google" width="20px" height="20px"   >
+                                   <img name="loginGoogle" src="<?= BASE_URL ?>/img/google.png" alt="icon google" width="20px" height="20px"   >
                                     Sign up with Google 
                                 </a>
                             </div>
@@ -70,7 +70,7 @@ if (empty($account) || empty($password)) {
                             <div class="text-center">
                                 <p>
                                     Bạn chưa có tài khoản?
-                                    <a href="" class="fw-bold" name="dangki">Đăng ký ngay</a>
+                                    <a href="<?= BASE_URL ?>/include/signup.php" class="fw-bold" name="dangki">Đăng ký ngay</a>
                                 </p>
                             </div>
                         </form>
