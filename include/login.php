@@ -1,3 +1,42 @@
+<?php
+require_once __DIR__ . "/../config/config.php";
+require_once __DIR__ . "/../classes/Db.php";
+
+$db = new Db();
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $account  = trim($_POST['email'] ?? '');
+$password = trim($_POST['password'] ?? '');
+
+if (empty($account) || empty($password)) {
+    die("Vui lòng nhập đầy đủ thông tin.");
+}
+
+
+    $sql = "SELECT id, full_name, email, phone, address, role
+            FROM customer
+            WHERE (email = ? OR phone = ?) AND password = ?
+            LIMIT 1";
+
+    $rows = $db->exeQuery($sql, [$account, $account, $password]);
+
+    if (count($rows) === 1) {
+        $user = $rows[0];
+        $_SESSION["customer_id"] = $user["id"];
+        $_SESSION["full_name"]   = $user["full_name"];
+        $_SESSION["role"]        = $user["role"];
+
+        if ($user["role"] === "admin") {
+            header("Location: ../admins/admin.php");
+        } else {
+            header("Location: ../layout.php");
+        }
+        exit;
+    }
+
+    die("Sai tài khoản hoặc mật khẩu.");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
